@@ -1,0 +1,74 @@
+Result Skip Results Iframe
+EDIT ON
+
+.calendar-container {
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #f6f5f4;
+  color: #1a1a1a;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+}
+
+.calendar {
+  padding: 0 30px 30px 30px;
+}
+
+table {
+    width : 220px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+th {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+td {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+td:nth-child(6) {
+    color: royalblue;
+}
+
+td:nth-child(7) {
+    color: red;
+}
+
+.button {
+    border: 1px solid #1a1a1a;
+    line-height: 1;
+    padding: 4px 4px;
+    font-size: 18px;
+    text-align: center;
+    color: #1a1a1a;
+    border-radius: 10px;
+    background-image: #ddd;
+}
+
+.dayButton {
+    border: 1px solid #f6f5f4;
+    line-height: 1;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-align: center;
+    color: #1a1a1a;
+    border-radius: 5px;
+    background-image: #f6f5f4;
+}
