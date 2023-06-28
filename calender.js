@@ -152,14 +152,14 @@ function showrentalperiod(inputPeriodDateHtml){
 let png;
 let name;
 const carPicture = [
-    {png: "./car_picture/Alphard.png",name: "Alphard"},
-    {png: "./car_picture/Aqua.png",name: "Aqua"},
-    {png: "./car_picture/bZ4X.png",name: "bZ4X"},
-    {png: "./car_picture/C-HR.png",name: "C-HR"},
-    {png: "./car_picture/Callora_axio.png",name: "Callora Axio"},
-    {png: "./car_picture/Callora_Cross.png",name: "Callora Cross"},
-    {png: "./car_picture/Callora_Fielder.png",name: "Callora Fielder"},
-    {png: "./car_picture/Callora_sport.png",name: "Callora Sport"}
+    {png: "./Alphard.png",name: "Alphard"},
+    {png: "./Aqua.png",name: "Aqua"},
+    {png: "./bZ4X.png",name: "bZ4X"},
+    {png: "./C-HR.png",name: "C-HR"},
+    {png: "./Callora_axio.png",name: "Callora Axio"},
+    {png: "./Callora_Cross.png",name: "Callora Cross"},
+    {png: "./Callora_Fielder.png",name: "Callora Fielder"},
+    {png: "./Callora_sport.png",name: "Callora Sport"}
 ]
 
 showCarList();
