@@ -14,7 +14,7 @@ let endDayCount = endDate.getDate(); // 月の末日
 let startDay = startDate.getDay(); // 月の最初の日の曜日を取得
 let calendarHtml = ''; // HTMLを組み立てる変数
 let periodHtml = '';
-let periodDateHtml = `借用期間 = ****/**/**  ~  ****/**/**`;
+let periodDateHtml = `<td>カレンダーの日付をクリックしてください</td>`;
 let rentalFirstDay = 0;
 let rentalFinalDay = 0;
 // main
@@ -22,6 +22,8 @@ let rentalFinalDay = 0;
 initcalendar();
 showCalendar();
 showrentalperiod(periodDateHtml);
+// console.log(date.getDay());
+// chooseDays("初回はクリックしてください");
 
 function monthYearCalc(prevnext){
     month = month + prevnext;
@@ -40,8 +42,8 @@ function monthYearCalc(prevnext){
 function initcalendar(){
     calendarHtml = '';
     calendarHtml += '<div><h1>'
-    calendarHtml += '<button name ="prevMonth" class = "button" onclick="moveMonth(-1)">Prev</button>' //月前送りボタン
-    calendarHtml += "  " + year  + '/' + month + "  " ; // 年月を記載
+    calendarHtml += '<button name ="prevMonth" class = "button" onclick="moveMonth(-1)">Prev</button>    ' //月前送りボタン
+    calendarHtml += "      " + year  + '/' + month + "      " ; // 年月を記載
     calendarHtml += '<button name ="nextMonth" class = "button" onclick="moveMonth(1)">Next</button>' //月前送りボタン
     calendarHtml += '</h1></div>'
 
@@ -108,7 +110,8 @@ function showCalendar(){
 }
 
 
-
+// 初回はクリック当日〜クリック当日を表示
+//カレンダークリック一回目は
 function chooseDays(day){
 
     if (rentalFirstDay === 0 && rentalFinalDay === 0){
@@ -126,7 +129,7 @@ function chooseDays(day){
 function renewalRentalPeriod(FirstDay, FinalDay){
     periodHtml += "<div>" //div追加
     //
-    periodDateHtml = `借用期間 = ${year}/${month}/${FirstDay}  ~  ${year}/${month}/${FinalDay}`
+    periodDateHtml = `<td>${year}/${month}/${FirstDay}  ~  ${year}/${month}/${FinalDay}</td>`
     showrentalperiod(periodDateHtml);
 }
 
@@ -135,15 +138,38 @@ function showrentalperiod(inputPeriodDateHtml){
     periodHtml += "<div>" //div追加
     //
     // 以下、借用期間の表示
-    periodHtml += "<h2>"
+    periodHtml += "<table><tr>"
+    periodHtml += "<td>借用期間</td>"; 
     periodDateHtml = inputPeriodDateHtml; //引数入力がある時は借用期間を更新する
-    periodHtml += periodDateHtml;
-    periodHtml += "</h2>"
+    periodHtml += periodDateHtml + "</tr>";
+    // console.log(periodHtml)
+    periodHtml += "</table>"
 
     periodHtml += "</div>" //div終了
     document.querySelector('#periodForm').innerHTML = periodHtml
 }
 
-function showUserInfo(userCode){
-    
+let png;
+let name;
+const carPicture = [
+    {png: "./car_picture/Alphard.png",name: "Alphard"},
+    {png: "./car_picture/Aqua.png",name: "Aqua"},
+    {png: "./car_picture/bZ4X.png",name: "bZ4X"},
+    {png: "./car_picture/C-HR.png",name: "C-HR"},
+    {png: "./car_picture/Callora_axio.png",name: "Callora Axio"},
+    {png: "./car_picture/Callora_Cross.png",name: "Callora Cross"},
+    {png: "./car_picture/Callora_Fielder.png",name: "Callora Fielder"},
+    {png: "./car_picture/Callora_sport.png",name: "Callora Sport"}
+]
+
+showCarList();
+
+function showCarList(){
+    let carListHtml = "";
+    for(const obj of carPicture){
+        console.log(obj.png);
+        carListHtml += `<img src=${obj.png} sizes = "200px, 100px" id =${obj.name} />`
+    }
+    document.querySelector("#carForm").innerHTML = carListHtml;
 }
+console.log(carPicture)
