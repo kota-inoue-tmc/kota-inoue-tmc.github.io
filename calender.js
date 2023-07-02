@@ -26,7 +26,7 @@ let rentalFinalMonth = "**";
 // main
 let png;
 let name;
-//以下、githubPages用
+// 以下、githubPages用
 const carPicture = [
     {png: "Alphard.png",name: "Alphard"},
     {png: "Aqua.png",name: "Aqua"},
@@ -37,6 +37,17 @@ const carPicture = [
     {png: "Callora_Fielder.png",name: "CalloraFielder"},
     {png: "Callora_sport.png",name: "CalloraSport"}
 ]
+// 以下、通常レポジトリ用
+// const carPicture = [
+//     {png: "./car_picture/Alphard.png",name: "Alphard"},
+//     {png: "./car_picture/Aqua.png",name: "Aqua"},
+//     {png: "./car_picture/bZ4X.png",name: "bZ4X"},
+//     {png: "./car_picture/C-HR.png",name: "C-HR"},
+//     {png: "./car_picture/Callora_axio.png",name: "CalloraAxio"},
+//     {png: "./car_picture/Callora_Cross.png",name: "CalloraCross"},
+//     {png: "./car_picture/Callora_Fielder.png",name: "CalloraFielder"},
+//     {png: "./car_picture/Callora_sport.png",name: "CalloraSport"}
+// ]
 
 let initRentalCarName = "車両を選択してください";
 let rentalCarName = "";
@@ -171,7 +182,7 @@ function hilightRentalPeriod(callNum){
                     for (let tempDay = startDate; tempDay <= rentalFinalDay; tempDay++){
                         document.getElementsByName(`dayButton${tempDay}`)[0].style.backgroundColor = `#03c3ee`;                        
                     }
-                }else if(month > rentalFirstMonth){ //表示月が借用月と返却月の間
+                }else if(month > rentalFirstMonth && month < rentalFinalMonth){ //表示月が借用月と返却月の間
                     for (let tempDay = startDate; tempDay <= endDate; tempDay++){
                         document.getElementsByName(`dayButton${tempDay}`)[0].style.backgroundColor = `#03c3ee`;                        
                     }
