@@ -1,179 +1,308 @@
-Result Skip Results Iframe
-EDIT ON
+/* Result Skip Results Iframe
+EDIT ON */
 
-/* body {
-    background-image: url("IMG_8591.jpeg");
-    background-size: cover;
-} */
-
-/* .bodyall {
-    background-image: url("IMG_8591.jpeg");
-    background-size: cover;
-} */
-
-.calendar-container {
-  width: 500px;
+.title {
+  height: 1000px;
+  line-height: 300px;
+  font-size: 60px;
   margin: 0 auto;
+  text-align: center;
+  color:#ffffff;
+  font-weight: 900;
+}
+
+.subtitle {
+  /* height: 500px; */
+  /* line-height: 100px; */
+  font-size: 60px;
+  margin: 0 auto;
+  text-align: center;
+  color:#ffffff;
+  /* padding-bottom: 1em; */
+  font-weight: 900;
+  border-bottom: 1rem solid;
+}
+
+.tabtitle {
+  /* height: 500px; */
+  line-height: 100px;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+  color:#ffffff;
+  /* padding-bottom: 1em; */
+  font-weight: 900;
+  /* border-bottom: 1rem solid; */
+}
+
+h1 {
+  padding-top: 1em;
+  padding-left: 1em;
+  height: 40px;
+  /* line-height: 0px; */
+  font-size: 32px;
+  /* margin: 0; */
+  text-align: left;
+  color:#ffffff;
+
+  font-weight: 600;
+}
+
+h2 {
+line-height: 40px;
+font-size: 24px;
+/* margin: 0; */
+text-align: left;
+color:#ffffff;
+padding-left: 3em;
+font-weight: 300;
+
+/* text-indent: -1em; */
+}
+
+.explanation {
+background: #00000077;
+padding-top: 3em;
+padding-bottom: 3em;
+margin-inline: 5em;
+}
+
+.message {
+  height: auto;
+  line-height: 50px;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  color:#ffffff;
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  /* padding-bottom: 40px; */
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 1000px;
+  margin: 0 auto;
+  background: transparent;
+  background: #00000077;
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  background: transparent;
+  background: #00000077;
+  /* background: #00000077; */
+}
+.tab_item:hover {
+  background-color: #d9d9d9;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+  background: transparent;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  background-color: #d9d9d9;
+  height: 450px;
+  display: none;
+  padding: 40px 40px;
+  clear: both;
+  overflow: hidden;
+  /* background: transparent; */
+  background: #00000077;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#tab_1:checked ~ #tab_1_content,
+#tab_2:checked ~ #tab_2_content,
+#tab_3:checked ~ #tab_3_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #03c3ee;
+  color: #fff;
+}
+.calendar-container {
+  /* width: 500px; */
+  margin: 0 auto;
+  /* border-radius: 5px; */
+  /* background: #f6f5f4; */
+  font-family: sans-serif;
+  /* border: 1px solid #ddd; */
+  text-align: center;
+  color:#ffffff;
+  font-weight: normal;
+}
+
+.calendar-title {
+  /* width: 100%; */
+  font-size: 24px;
+  margin: 0 auto;
+
+}
+
+.carList-container {
+  /* width: 500px; */
+  margin: 0 auto;
+  /* border-radius: 5px; */
+  /* background: #f6f5f4; */
+  color: #ffffff;
+  font-family: sans-serif;
+  text-align: center;
+  background: transparent;
+}
+
+.rentalInfoTitle{
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+  color:#ffffff;
+  /* padding-bottom: 1em; */
+  font-weight: 500;
+  border-bottom: 5px solid;
+  background: #00000027;
+}
+
+.rentalInfo {
+  width: auto;
+  margin: 0 auto;
+  font-size: 36px;
   border-radius: 5px;
+  color: #ffffff;
+  /* font-family: sans-serif; */
+  text-align: center;
+  /* align-content: center; */
+  padding: 40px;
+  background: transparent;
+  background: #00000077;
+}
+
+.map-container {
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+.mapForm {
+  /* width:  */
+  margin: 0 auto;
+  font-size: 36px;
+  border-radius: 5px;
+  padding: 20px;
   /* background: #f6f5f4; */
   color: #ffffff;
   font-family: sans-serif;
   text-align: center;
 }
 
-
-.periodForm {
-    /* width:  */
-    margin: 0 auto;
-    font-size: 36px;
-    border-radius: 5px;
-    padding: 0px 0px 20px 20px;
-    /* background: #f6f5f4; */
-    color: #ffffff;
-    font-family: sans-serif;
-    text-align: center;
-  }
-
-.title {
-    height: 2000px;
-    line-height: 500px;
-    font-size: 60px;
-    margin: 0;
-    text-align: center;
-    color:#ffffff;
+.rentalCarName {
+  /* width:  */
+  margin: 0 auto;
+  font-size: 36px;
+  border-radius: 5px;
+  padding: 0px 0px 20px 20px;
+  /* background: #f6f5f4; */
+  color: #ffffff;
+  font-family: sans-serif;
+  text-align: center;
 }
 
-.message {
-    height: auto;
-    line-height: 200px;
-    font-size: 40px;
-    margin: 0;
-    text-align: center;
-    color:#ffffff;
+.carimg {
+  width: 280px;
+  height: 140px;
+  object-fit: cover;
+  background: transparent;
+  /* background-color: #2e2e2e; */
+  /* opacity: 0.5; */
 }
 
-h1 {
-    height: 80px;
-    line-height: 80px;
-    font-size: 24px;
-    /* margin: 0; */
-    text-align: center;
-    color:#ffffff;
-}
 
-/* .calendar { */
-  /* padding: 0 30/ßpx 30px 30px; */
-/* } */
+
+
+
 
 table {
-    width : auto;
+  /* width: 100%; */
+  margin: 0 auto;
 }
 
 th, td {
     border: 1px solid #ddd;
-    /* padding: 10px 30px; */
     text-align: center;
-    color:#ffffff;
+    /* color:#ffffff; */
     font-weight: normal;
-    /* font-size: 14px; */
 }
-
-/* td:nth-child(6) {
-    color: royalblue;
-}
-
-td:nth-child(7) {
-    color: red;
-} */
 
 .button {
-    /* border: 1px solid #ffffff; */
-    /* line-height: 1; */
     padding: 5px 12px;
     font-size: 24px;
     text-align: center;
     color: #ffffff;
-    border-radius: 5px;
-    /* background-image: #ddd; */
     background: transparent;
+}
+
+.button:hover {
+  background-color: #d9d9d9;
 }
 
 .dayButton {
-    /* border: 1px solid #f6f5f4; */
-    /* line-height: 1; */
-    /* padding: 20px 60px; */
-    width: 5em;
-    height: 3em;
+    width: 4em;
+    height: 2em;
     font-size: 24px;
     text-align: center;
     color: #ffffff;
-    border-radius: 5px;
-    /* background-image: #f6f5f4; */
     background: transparent;
 }
 
+.dayButton:hover {
+  background-color: #d9d9d9;
+}
+
+.carButton {
+  text-align: center;
+  color: #ffffff;
+  background: transparent;
+}
+
+.carButton:hover {
+  background-color: #d9d9d9;
+}
 
 
-/*タブ切り替え全体のスタイル*/
-.tabs {
-    margin-top: 50px;
-    padding-bottom: 40px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 1000px;
-    margin: 0 auto;
-    background: transparent;
-  }
-  
-  /*タブのスタイル*/
-  .tab_item {
-    width: calc(100%/3);
-    height: 50px;
-    background-color: #d9d9d9;
-    line-height: 50px;
-    font-size: 16px;
-    text-align: center;
-    color: #565656;
-    display: block;
-    float: left;
-    text-align: center;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    background: transparent;
-  }
-  .tab_item:hover {
-    opacity: 0.75;
-    background: transparent;
-  }
-  
-  /*ラジオボタンを全て消す*/
-  input[name="tab_item"] {
-    display: none;
-    background: transparent;
-  }
-  
-  /*タブ切り替えの中身のスタイル*/
-  .tab_content {
-    height: 650px;
-    display: none;
-    padding: 40px 40px 0;
-    clear: both;
-    overflow: hidden;
-    /* background: transparent; */
-    background: #ffffff35;
-
-  }
-  
-  
-  /*選択されているタブのコンテンツのみを表示*/
-  #tab_1:checked ~ #tab_1_content,
-  #tab_2:checked ~ #tab_2_content,
-  #tab_3:checked ~ #tab_3_content {
-    display: block;
-  }
-  
-  /*選択されているタブのスタイルを変える*/
-  .tabs input:checked + .tab_item {
-    background-color: #03c3ee;
-    color: #fff;
-  }
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+ #map {
+  height: 400px; /* The height is 400 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+/* html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
