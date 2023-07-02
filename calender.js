@@ -1,175 +1,111 @@
-'use strict'
-// 1行目に記載している 'use strict' は削除しないでください
+<!DOCTYPE html>
+<html lang="ja">
 
-// 初期化
-let date = new Date() //現在の日付を取得
-let year = date.getFullYear(); //現在の年を取得
-const weeks = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-let month = date.getMonth() + 1 ;
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <meta charset="utf-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
 
+</head>
 
-let startDate = new Date(year, month - 1, 1); // 月の最初の日を取得
-let endDate = new Date(year, month,  0); // 月の最後の日を取得
-let endDayCount = endDate.getDate(); // 月の末日
-let startDay = startDate.getDay(); // 月の最初の日の曜日を取得
-let calendarHtml = ''; // HTMLを組み立てる変数
-let periodHtml = '';
-let periodDateHtml = `<td>カレンダーの日付をクリックしてください</td>`;
-let rentalFirstDay = 0;
-let rentalFinalDay = 0;
-// main
+<body background="IMG_8591.jpeg">
+  <div class="title">
+    <p>KOTA INOUE<br>プログラミング基礎 最終発表</p>
+  </div>
+  <div class="explanation">
+    <div class="subtitle">
+      ありがとうございました<br>
+    </div>         
+    <div class="message">
+      自動運転・先進安全開発部でスマホアプリの開発を担当していますが、担当してる割にアプリをろくに作れないので、<br>
+      もっと自分でソフトを作りながら、システム開発できる人になりたかったので応募しました。<br>
+      DIG17のみなさん、講師の皆さんのおかげで、プログラミングに対する壁がなくなってきました。<br>
+      これからもっと自己研鑽しながら、一人前のソフト開発者になれるように日々努力していきます。<br>
+      本当に楽しい時間でした！ありがとうございました！<br>
+    </div>
+  </div>
+  
+  <div class="title">
+    <br>
+    Boot Campに挑戦したいです（To上司）<br>
+  </div>         
 
-initcalendar();
-showCalendar();
-showrentalperiod(periodDateHtml);
-// console.log(date.getDay());
-// chooseDays("初回はクリックしてください");
+  <div class="explanation">
+    <div class="subtitle">
+      成果発表<br>
+    </div>         
 
-function monthYearCalc(prevnext){
-    month = month + prevnext;
-    if(month < 1){
-        year -= 1;
-        month = 12;
-    }else if(month > 12){
-        year += 1;
-        month = 1;
-    }
-    // initcalendar();
-    // showCalendar();
-}
+    <h1>1. Githubの使い方を学ぶ</h1>
+    <hr>
+    <h2>会社PCと自宅PCを使って2人での共同開発を模擬</h2>
+    <h1>2. フロントエンドの作り方の基礎を学ぶ</h1>
+    <hr>
+    <h2>しっかり学べたおかげで、業務のアプリのコードも見え方が変わってきた</h2>
+    <h1>3. バックエンドの作り方の基礎を学ぶ</h1>
+    <hr>
+    <h2>MySQLを使ってローカルサーバとの通信は構築できたが、<br>
+      github Pagesで公開するときはWebサーバ必要？？？となり、あきらめました。</h2>
+  </div>
 
-// カレンダーの初期表示
-function initcalendar(){
-    calendarHtml = '';
-    calendarHtml += '<div><h1>'
-    calendarHtml += '<button name ="prevMonth" class = "button" onclick="moveMonth(-1)">Prev</button>    ' //月前送りボタン
-    calendarHtml += "      " + year  + '/' + month + "      " ; // 年月を記載
-    calendarHtml += '<button name ="nextMonth" class = "button" onclick="moveMonth(1)">Next</button>' //月前送りボタン
-    calendarHtml += '</h1></div>'
+  <div class="title">
+    <br>
+    実演<br>
+  </div>     
+<!-- script.jsが実行される前にcalendar IDを宣言すること -->
+<div class="explanation">
+    <div class="subtitle">
+      機能概要 : レンタカー屋の車両借用ページ<br>
+    </div>         
+    <h1>機能① : カレンダーで借用期間を設定</h1>
+    <hr>
+    <h2><li>カレンダーを自作（ここが一番いい練習になりました）</li><li>選択期間をハイライト</li><li>例外操作にも対応（思ったよりも例外操作への対応は大変でした）</li></h2>
+    <h1>機能② : 車両選択</h1>
+    <hr>
+    <h2><li>車両を写真から選択可能（写真のサイズを綺麗に揃えれた！）</li><li>選択車両をハイライト</li></h2>
+    <h1><s>機能③ : Googlemapで行き先を選択</s></h1>
+    <hr>
+    <h2><s><li>googlemapで行き先を検索可能</li><li>現在地からルート検索し走行時間を算出</li></s><br>
+  </div>
+  <div class="title">
+  </div>       
+  <div class="tabs">
+    <div class="tabtitle">
+      車の借用情報を入力してください<br>
+    </div>    
+    <input id="tab_1" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="tab_1">借用期間</label>
+    <input id="tab_2" type="radio" name="tab_item">
+    <label class="tab_item" for="tab_2">車</label>
+    <input id="tab_3" type="radio" name="tab_item">
+    <label class="tab_item" for="tab_3">行き先</label>
+    <!-- 以下tab1 -->
+    <div class="tab_content" id="tab_1_content">
+      <div class="calendar-container">
+        <div class = "calendar-title" id="calendar-title"></div> 
+        <div class = "calendar" id="calendar"></div> 
+      </div>
+    </div>
+    <!-- 以下tab2 -->
+    <div class="tab_content" id="tab_2_content">
+      <div class="carList-container">
+        <div class = "carimg" id="carForm"></div> 
+      </div>
+    </div>
+    <!-- 以下tab3 -->
+    <div class="tab_content" id="tab_3_content">
+      <div id="map" class="map-container" style="width:620px; height:400px"></div>  
+    </div>
+    <div class="rentalInfoTitle">借用情報</div>
+    <div class="rentalInfo" id="rentalInfo"></div> 
+  </div>
+</body>
+<script>
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+({key: "AIzaSyCt8IO-cPLfJo3Ks8a-Rz-G98kRlnJV1Ek", v: "weekly"
+});
+</script>      
 
-    calendarHtml += '<table align = "center" class = "calendar">'; //カレンダー用のテーブルを導入
-}
-
-function moveMonth(prevnext){
-    // month = month + prevnext;
-    monthYearCalc(prevnext);
-    initcalendar();
-    showCalendar();
-    return month;
-}
-
-
-function showCalendar(){
-    startDate = new Date(year, month - 1, 1); // 月の最初の日を取得
-    // console.log(startDate);
-    endDate = new Date(year, month,  0); // 月の最後の日を取得
-    endDayCount = endDate.getDate(); // 月の末日
-    startDay = startDate.getDay(); // 月の最初の日の曜日を取得
-    
-    // getDay()は日曜日スタート（0 = 日曜日）なので、月曜日スタートへ
-    if (startDay === 0){
-        startDay = 6;
-    }else{
-        startDay -= 1;
-    }
-    // console.log(startDay);
-
-    let dayCount = 1; // 日にちのカウント
-    // 曜日の行を作成
-    for (let i = 0; i < weeks.length; i++) {
-        calendarHtml += '<th>' + weeks[i] + '</th>';
-        // <td>は表データのセル要素。各セルに曜日を記載
-    }
-
-    for (let w = 0; w < 6; w++) {
-        if( dayCount > endDayCount){
-                // dayCountが月末日を超えたら何もしない
-        }else{
-            calendarHtml += '<tr>';
-
-            for (let d = 0; d < 7; d++) {
-                if (w == 0 && d < startDay) {
-                    // 1週目で1日の曜日の前
-                    calendarHtml += '<td></td>';
-                } else if (dayCount > endDayCount) {
-                    // 末尾の日数を超えた
-                    calendarHtml += '<td></td>';
-                } else {
-                    calendarHtml += '<td>' + `<button name = "dayButton" class = "dayButton" onclick = chooseDays(${dayCount})>${dayCount}</button>` + '</td>';
-                    dayCount++;
-                }
-            }
-            calendarHtml += '</tr>';
-        }
-    }
-    calendarHtml += '</table>';
-    calendarHtml += '</div>';
-
-    document.querySelector('#calendar').innerHTML = calendarHtml;
-
-}
-
-
-// 初回はクリック当日〜クリック当日を表示
-//カレンダークリック一回目は
-function chooseDays(day){
-
-    if (rentalFirstDay === 0 && rentalFinalDay === 0){
-        rentalFirstDay = day; //1回目のクリック（＝借用最終日が入力されていない場合）は借用初日とする
-    }else if(rentalFirstDay !==0 && rentalFinalDay === 0){
-        rentalFinalDay = day;
-    }else{
-        rentalFirstDay = 0;
-        rentalFinalDay = 0;
-    }
-    renewalRentalPeriod(rentalFirstDay, rentalFinalDay);
-}
-
-// 借用期間の決定と表示
-function renewalRentalPeriod(FirstDay, FinalDay){
-    periodHtml += "<div>" //div追加
-    //
-    periodDateHtml = `<td>${year}/${month}/${FirstDay}  ~  ${year}/${month}/${FinalDay}</td>`
-    showrentalperiod(periodDateHtml);
-}
-
-function showrentalperiod(inputPeriodDateHtml){
-    let periodHtml = "";
-    periodHtml += "<div>" //div追加
-    //
-    // 以下、借用期間の表示
-    periodHtml += "<table><tr>"
-    periodHtml += "<td>借用期間</td>"; 
-    periodDateHtml = inputPeriodDateHtml; //引数入力がある時は借用期間を更新する
-    periodHtml += periodDateHtml + "</tr>";
-    // console.log(periodHtml)
-    periodHtml += "</table>"
-
-    periodHtml += "</div>" //div終了
-    document.querySelector('#periodForm').innerHTML = periodHtml
-}
-
-let png;
-let name;
-const carPicture = [
-    {png: "./Alphard.png",name: "Alphard"},
-    {png: "./Aqua.png",name: "Aqua"},
-    {png: "./bZ4X.png",name: "bZ4X"},
-    {png: "./C-HR.png",name: "C-HR"},
-    {png: "./Callora_axio.png",name: "Callora Axio"},
-    {png: "./Callora_Cross.png",name: "Callora Cross"},
-    {png: "./Callora_Fielder.png",name: "Callora Fielder"},
-    {png: "./Callora_sport.png",name: "Callora Sport"}
-]
-
-showCarList();
-
-function showCarList(){
-    let carListHtml = "";
-    for(const obj of carPicture){
-        console.log(obj.png);
-        carListHtml += `<img src=${obj.png} sizes = "200px, 100px" id =${obj.name} />`
-    }
-    document.querySelector("#carForm").innerHTML = carListHtml;
-}
-console.log(carPicture)
+<script type="text/javascript" src="calender.js"></script>
+</html>
