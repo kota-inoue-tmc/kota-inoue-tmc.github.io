@@ -35,7 +35,8 @@ const carPicture = [
     {png: "Callora_axio.png",name: "CalloraAxio"},
     {png: "Callora_Cross.png",name: "CalloraCross"},
     {png: "Callora_Fielder.png",name: "CalloraFielder"},
-    {png: "Callora_sport.png",name: "CalloraSport"}
+    {png: "Callora_sport.png",name: "CalloraSport"},
+    {png: "zelda_sord.jpg", name: "Master sord"}
 ]
 // 以下、通常レポジトリ用
 // const carPicture = [
@@ -46,7 +47,8 @@ const carPicture = [
 //     {png: "./car_picture/Callora_axio.png",name: "CalloraAxio"},
 //     {png: "./car_picture/Callora_Cross.png",name: "CalloraCross"},
 //     {png: "./car_picture/Callora_Fielder.png",name: "CalloraFielder"},
-//     {png: "./car_picture/Callora_sport.png",name: "CalloraSport"}
+//     {png: "./car_picture/Callora_sport.png",name: "CalloraSport"},
+//     {png: "./car_picture/zelda_sord.jpg", name: "Master sord"}
 // ]
 
 let initRentalCarName = "車両を選択してください";
